@@ -70,7 +70,7 @@ class RoundHistoryTests: XCTestCase {
         sut.append(finalRound)
         
         // then
-        let winningCarNames = sut.winningCars.map { $0.name }
+        let winningCarNames = sut.winningCars?.map { $0.name }
         let expectation = [thirdCarName]
         XCTAssertEqual(winningCarNames, expectation)
     }
@@ -90,7 +90,7 @@ class RoundHistoryTests: XCTestCase {
         sut.append(finalRound)
         
         // then
-        let winningCarNames = sut.winningCars.map { $0.name }
+        let winningCarNames = sut.winningCars?.map { $0.name }
         let expectation = [secondCarName, thirdCarName]
         XCTAssertEqual(winningCarNames, expectation)
     }
